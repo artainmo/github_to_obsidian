@@ -11,3 +11,25 @@ Personal project. Program to transfer and synchronize all my github repositories
 7. Copy code files and place the code between backtilts to display properly in markdown.
 8. Each obsidian file should have a 'view on github' link in its footer. The root file of a project should contain its tags.
 9. Use github actions to do the verification once a day.
+
+## File management
+##### File naming
+Use github repository path as file name in obsidian.<br>
+Transform ' ' into '_' and '/' into '~'.
+
+##### Files to skip
+```
+.gitkeep
+*.swp
+a.out
+*.png
+*.json (camagru/Controller/utils/composer.json)
+*.txt (cpp/module01/ex07/f.txt, darkly/10 - brute-force login page/resources/500-worst-passwords.txt)
+Files with no extension besides if makefile (darkly/1 - recover password interception change email/flag, darkly/1 - recover password interception change email/resources/BurpSuite)
+*.csv (dslr/datasets/dataset_test.csv)
+*.zip
+```
+
+##### Directories to skip
+```
+```
