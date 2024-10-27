@@ -24,9 +24,10 @@ Give the 'from-github' tag to all files that come from github.
 
 ###### Content
 All files' content should be between backtilts as this is how code is displayed in obsidian markdown.<br>
-Only README.md files' content should not be between backtilts. And also this file, if at root of repository, should start with the tags.<br>
+Only README.md files' content should not be between backtilts. And also README.md files, if at root of repository, should start with the tags.<br>
+The \<br\> HTML tags can be removed from README.md files for obsidian's markdown.<br>
 All files should have the 'from-github' tag.<br>
-All files should after the tags and before the content have a line saying: 'View this page on [github](appropriate_link)'.
+All files should after the tags and before the content have a line saying: 'View this page on [github](appropriate_link).'.
 
 ##### Files to skip
 ```
@@ -59,6 +60,7 @@ h42n42.conf.in
 *.rt
 *.names
 *.pkl
+*.log
 ```
 
 ##### Directories to skip
@@ -68,6 +70,8 @@ h42n42.conf.in
 */utils/ft_printf
 */utils/get_next_line
 */utils/libft
+*/libs/get_next_line
+*/libs/libft
 */utils/minilibX
 inception-of-things/p1
 inception-of-things/p2
