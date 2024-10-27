@@ -22,14 +22,19 @@ Transform ' ' into '_' and '/' into '~'.
 .gitkeep
 *.swp
 a.out
-*.png
-*.json (camagru/Controller/utils/composer.json)
 *.txt (cpp/module01/ex07/f.txt, darkly/10 - brute-force login page/resources/500-worst-passwords.txt)
 Files with no extension besides if makefile (darkly/1 - recover password interception change email/flag, darkly/1 - recover password interception change email/resources/BurpSuite)
-*.csv (dslr/datasets/dataset_test.csv)
 *.zip
+*.csv (dslr/datasets/dataset_test.csv)
+*.svg (ft_hangouts/ft_hangouts/ft_hangouts/Assets.xcassets/42-logo.imageset/42-logo-white.svg)
+*.png
+*.json (camagru/Controller/utils/composer.json)
+*.storyboard
+*.plist
 ```
 
 ##### Directories to skip
 ```
+*.xcworkspace
+*.xcodeproj
 ```
