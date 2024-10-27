@@ -13,13 +13,20 @@ Personal project. Program to transfer and synchronize all my github repositories
 9. Use github actions to do the verification once a day.
 
 ## File management
-##### File naming
+##### Naming
 Use github repository path as file name in obsidian.<br>
-Transform ' ' into '_' and '/' into '~'.
+Transform ' ' into '_' and '/' into '~'.<br>
+Remove '.' if file name starts with that.
 
 ###### Tags
 Give tags of project to its root README.<br>
 Give the 'from-github' tag to all files that come from github.
+
+###### Content
+All files' content should be between backtilts as this is how code is displayed in obsidian markdown.<br>
+Only README.md files' content should not be between backtilts. And also this file, if at root of repository, should start with the tags.<br>
+All files should have the 'from-github' tag.<br>
+All files should after the tags and before the content have a line saying: 'View this page on [github](appropriate_link)'.
 
 ##### Files to skip
 ```
@@ -50,6 +57,8 @@ h42n42.conf.in
 *.pdf
 *.bmp
 *.rt
+*.names
+*.pkl
 ```
 
 ##### Directories to skip
@@ -66,3 +75,5 @@ matcha/frontend
 minishell-unittest/test/test
 */data/
 ```
+
+
