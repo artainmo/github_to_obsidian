@@ -63,5 +63,6 @@ h42n42.conf.in
 inception-of-things/p1
 inception-of-things/p2
 matcha/frontend
+minishell-unittest/test/test
 */data/
 ```
