@@ -61,6 +61,8 @@ h42n42.conf.in
 *.names
 *.pkl
 *.log
+reportWebVitals.js
+app.e2e-spec.ts
 ```
 
 ##### Directories to skip
@@ -78,6 +80,10 @@ inception-of-things/p2
 matcha/frontend
 minishell-unittest/test/test
 */data/
+*/node_modules
+*/js/vendor
+webserv/conf
+webserv/webserv/frontend
 ```
 
 
