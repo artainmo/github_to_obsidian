@@ -20,7 +20,8 @@ Remove '.' if file name starts with that.
 
 ###### Tags
 Give tags of project to its root README.<br>
-Give the 'from-github' tag to all files that come from github.
+Give the 'from-github' tag to all files that come from github.<br>
+If on a page of code you can detect the programming language via its extension, add this programming language as a tag.
 
 ###### Content
 All files' content should be between backtilts as this is how code is displayed in obsidian markdown.<br>
@@ -31,19 +32,19 @@ All files should after the tags and before the content have a line saying: 'View
 
 ##### Files to skip
 ```
+Files with no extension besides if makefile/Makefile/dockerfile/Dockerfile
 .gitkeep
 *.swp
 a.out
 .env
-*.txt (cpp/module01/ex07/f.txt, darkly/10 - brute-force login page/resources/500-worst-passwords.txt)
-Files with no extension besides if makefile/Makefile/dockerfile/Dockerfile (darkly/1 - recover password interception change email/flag, darkly/1 - recover password interception change email/resources/BurpSuite)
+*.txt 
 *.zip
-*.csv (dslr/datasets/dataset_test.csv)
-*.svg (ft_hangouts/ft_hangouts/ft_hangouts/Assets.xcassets/42-logo.imageset/42-logo-white.svg)
+*.csv 
+*.svg 
 *.png
 *.jpg
 *.ico
-*.json (camagru/Controller/utils/composer.json)
+*.json 
 *.storyboard
 *.plist
 telegraf.conf
@@ -51,9 +52,9 @@ grafana.db
 wordpress.sql
 .eslintrc.js
 .prettierrc
-yarn.lock
-Makefile.options
-h42n42.conf.in
+*.lock
+*.options
+*.conf.in
 *.map
 *.pdf
 *.bmp
@@ -79,7 +80,7 @@ inception-of-things/p1
 inception-of-things/p2
 matcha/frontend
 minishell-unittest/test/test
-*/data/
+*/data
 */node_modules
 */js/vendor
 webserv/conf
