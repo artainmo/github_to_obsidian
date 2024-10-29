@@ -17,12 +17,12 @@ Transform ' ' into '_' and '/' into '~'.<br>
 Remove '.' if file name starts with that.<br>
 Add '.md' extension in the end for obsidian.
 
-###### Tags
+##### Tags
 Give tags of project to its root README.<br>
 Give the 'from-github' tag to all files that come from github.<br>
 If on a page of code you can detect the programming language via its extension, add this programming language as a tag.
 
-###### Content
+##### Content
 All files' content should be between backtilts as this is how code is displayed in obsidian markdown.<br>
 Only README.md files' content should not be between backtilts. And also README.md files, if at root of repository, should start with the tags.<br>
 The \<br\> HTML tags can be removed from README.md files for obsidian's markdown.<br>
