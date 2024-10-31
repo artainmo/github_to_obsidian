@@ -1,0 +1,24 @@
+name: Daily Update
+
+on: 
+  workflow_dispatch: # This allows manual execution of the workflow.
+  schedule:
+    - cron: "0 0 * * *"  # Runs every day at midnight UTC.
+
+jobs:
+  update:
+    runs-on: ubuntu-latest # Ubuntu is generally faster and more cost-efficient for GitHub to run, making it the default choice. For most projects, Linux (Ubuntu) will work just fine even if developed on macOS.
+
+    steps:
+      # Step 1: Download the GitHub repository’s source code to the runner (the virtual machine where the action is being executed). Without this step, the subsequent steps wouldn't have access to the repository's code.
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+    
+      - name: Update the obsidian repo.
+        run: |
+          git clone https://github.com/artainmo/Obsidian.git
+          python main.py
+          cd Obsidian/Obsidian
+          git add *
+          git commit -m "automatic github_to_obsidian synchronization"
+          git push
