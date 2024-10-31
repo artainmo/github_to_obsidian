@@ -10,7 +10,7 @@ If a new file has been created or an existing file updated, the program will syn
 4. Skip certain directories and files such as .git or submodules or ones related to external library or config files. \
 5. Create the markdown and code files. \
 6. For synchronization, verify if each file already exists, and if it exists see if its contents are similar and tags are similar. \
-7. Use github actions to do the verification once a day.
+7. Use github actions to do the verification once a day. \
 
 ## File management
 ##### Naming
