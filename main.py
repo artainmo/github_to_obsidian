@@ -6,7 +6,7 @@ from create_content import handle_file
 USER = "artainmo" 
 TOKEN = "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"
 STOP = int(sys.argv[1]) if len(sys.argv) > 1 else -1
-OBSIDIAN_PATH = "../obsidian_test"
+OBSIDIAN_PATH = "Obsidian/Obsidian"
 
 def api_call(url):
     try:
