@@ -16,7 +16,7 @@ jobs:
     
       - name: Update the obsidian repo.
         run: |
-          git clone https://github.com/artainmo/Obsidian.git
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/artainmo/Obsidian.git
           python main.py
           cd Obsidian/Obsidian
           git add *
