@@ -13,10 +13,16 @@ jobs:
       # Step 1: Download the GitHub repository’s source code to the runner (the virtual machine where the action is being executed). Without this step, the subsequent steps wouldn't have access to the repository's code.
       - name: Checkout the repository
         uses: actions/checkout@v3
+
+      - name: Clone PRIVATE repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+        with:
+          owner: 'artainmo'
+          repository: 'Obsidian'
+          access-token: ${{ secrets.PRIVATE_REPO_ACCESS }}
     
       - name: Update the obsidian repo.
         run: |
-          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/artainmo/Obsidian.git
           python main.py
           cd Obsidian/Obsidian
           git add *
