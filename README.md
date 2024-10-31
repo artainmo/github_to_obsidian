@@ -6,8 +6,8 @@ Personal project. Program to transfer and synchronize all my github repositories
 2. Iterate over all projects, to get all its files and then files inside their directory. \
 3. Remove in github itself, files or directories that should not be there. \
 4. Skip certain directories and files such as .git or submodules or ones related to external library or config files. \
-5. Create the markdown files.
-6. For synchronization, verify if each file already exists, and if it exists see if its contents are similar and tags are similar.
+5. Create the markdown and code files. \
+6. For synchronization, verify if each file already exists, and if it exists see if its contents are similar and tags are similar. \
 7. Use github actions to do the verification once a day.
 
 ## File management
