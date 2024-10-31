@@ -9,9 +9,12 @@ STOP = int(sys.argv[1]) if len(sys.argv) > 1 else -1
 OBSIDIAN_PATH = "../obsidian_test"
 
 def api_call(url):
+    try:
         response = requests.get(url, headers={"Authorization": f"token {TOKEN}"}, 
                                 params={"per_page": 100})
-        return response
+    except requests.exceptions.ConnectionError as e:
+        print(f"API call ERROR: {e}")
+    return response
 
 def parse_json(url):
     while True:

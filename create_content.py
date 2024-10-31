@@ -21,7 +21,7 @@ def file_preface(file, repo):
         formatted_topics = ' '.join(f'#{topic}' for topic in repo["topics"])
         tags = "#from-github " + formatted_topics + "\n\n"
     notice = f"View this page on [github]({file['html_url']}). " +\
-            "Only edit this page on [github]({file['html_url']}).\n\n"
+            f"Only edit this page on [github]({file['html_url']}).\n\n"
     split = "---\n\n"
     return tags + notice + split
 
@@ -47,7 +47,7 @@ def file_content_string(file, repo):
 
 def path_to_name(repo_name, file_name):
     complete_path = repo_name + "/" + file_name
-    transformed = complete_path.replace(' ', '_').replace('/', '~')
+    transformed = complete_path.replace('/', '~')
     if transformed.startswith('.'):
         transformed = transformed[1:]
     if not transformed.endswith('.md'):
@@ -57,9 +57,9 @@ def path_to_name(repo_name, file_name):
 def create_file(obsidian_path, file, repo):
     content = file_content_string(file, repo)
     file_path = obsidian_path + "/" + path_to_name(repo["name"], file["path"])
-    with open(file_name, 'w') as file:
+    with open(file_path, 'w') as file:
         file.write(content)
-        print(f"File '{file_name}' got created or updated.")
+        print(f"File '{file_path}' got created or updated.")
 
 def file_changed(obsidian_path, file, repo):
     path = obsidian_path + "/" + path_to_name(repo["name"], file["path"])

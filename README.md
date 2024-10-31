@@ -13,7 +13,7 @@ Personal project. Program to transfer and synchronize all my github repositories
 ## File management
 ##### Naming
 Use github repository path as file name in obsidian.<br>
-Transform ' ' into '_' and '/' into '~'.<br>
+Transform '/' into '~'.<br>
 Remove '.' if file name starts with that.<br>
 Add '.md' extension in the end for obsidian.
 
