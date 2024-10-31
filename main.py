@@ -1,15 +1,21 @@
 import requests
 import sys
 from transfer_ignore import filter_dirs, filter_files
+from create_content import handle_file
 
 USER = "artainmo" 
 TOKEN = "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"
 STOP = int(sys.argv[1]) if len(sys.argv) > 1 else -1
+OBSIDIAN_PATH = "../obsidian_test"
+
+def api_call(url):
+        response = requests.get(url, headers={"Authorization": f"token {TOKEN}"}, 
+                                params={"per_page": 100})
+        return response
 
 def parse_json(url):
     while True:
-        response = requests.get(url, headers={"Authorization": f"token {TOKEN}"}, 
-                                params={"per_page": 100})
+        response = api_call(url)
         data = response.json()
         if not data:
             break
@@ -29,7 +35,8 @@ def files_from_dir(repo, directory=""):
         else:
             if filter_files(repo + "/" + file_or_dir["path"]):
                 continue
-            yield file_or_dir
+            file = api_call(f"https://api.github.com/repos/{USER}/{repo}/contents/{file_or_dir['path']}").json()
+            yield file
 
 # I will get all the public repos only, I don't need the private ones either way.
 def get_all_repos():
@@ -40,6 +47,5 @@ repo_num = 0
 for repo in get_all_repos():
     repo_num += 1
     if STOP == -1 or repo_num == STOP:
-        print(repo_num)
         for file in files_from_dir(repo["name"]):
-            print(repo["name"] + "/" + file["path"])
+            handle_file(OBSIDIAN_PATH, file, repo)
