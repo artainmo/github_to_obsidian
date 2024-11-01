@@ -26,6 +26,7 @@ jobs:
           API_GITHUB: ${{ secrets.API_GITHUB }}
         run: |
           ls
+          ls Obsidian
           cat /Obsidian/Obsidian/42-api-slot-finder~README.md
           python main.py
           cd Obsidian/Obsidian
