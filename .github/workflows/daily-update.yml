@@ -22,6 +22,8 @@ jobs:
           access-token: ${{ secrets.PRIVATE_REPO_ACCESS }}
     
       - name: Update the obsidian repo.
+        env: 
+          API_GITHUB: ${{ secrets.API_GITHUB }}
         run: |
           python main.py
           cd Obsidian/Obsidian
