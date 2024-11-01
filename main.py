@@ -1,19 +1,24 @@
 import requests
 import sys
+import os
 from transfer_ignore import filter_dirs, filter_files
 from create_content import handle_file
 
 USER = "artainmo" 
-TOKEN = "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"
+TOKEN = os.getenv('API_GITHUB')
 STOP = int(sys.argv[1]) if len(sys.argv) > 1 else -1
-OBSIDIAN_PATH = "Obsidian/Obsidian"
+OBSIDIAN_PATH = "/Obsidian/Obsidian"
 
 def api_call(url):
     try:
         response = requests.get(url, headers={"Authorization": f"token {TOKEN}"}, 
                                 params={"per_page": 100})
+        if response.status_code == 401:
+            print("API call ERROR: 401\n" + response.text)
+            sys.exit(1)
     except requests.exceptions.ConnectionError as e:
         print(f"API call ERROR: {e}")
+        sys.exit(1)
     return response
 
 def parse_json(url):
