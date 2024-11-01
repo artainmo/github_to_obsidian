@@ -7,7 +7,7 @@ from create_content import handle_file
 USER = "artainmo" 
 TOKEN = os.getenv('API_GITHUB')
 STOP = int(sys.argv[1]) if len(sys.argv) > 1 else -1
-OBSIDIAN_PATH = "/Obsidian/Obsidian"
+OBSIDIAN_PATH = "Obsidian/Obsidian"
 
 def api_call(url):
     try:
