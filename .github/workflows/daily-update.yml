@@ -27,6 +27,7 @@ jobs:
         run: |
           ls
           ls Obsidian
+          ls Obsidian/Obsidian
           cat /Obsidian/Obsidian/42-api-slot-finder~README.md
           python main.py
           cd Obsidian/Obsidian
