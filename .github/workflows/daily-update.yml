@@ -6,7 +6,7 @@ on:
     - cron: "0 0 * * *"  # Runs every day at midnight UTC.
 
 jobs:
-  update:
+  update: # This is the main job
     runs-on: ubuntu-latest # Ubuntu is generally faster and more cost-efficient for GitHub to run, making it the default choice. For most projects, Linux (Ubuntu) will work just fine even if developed on macOS.
 
     steps:
@@ -32,3 +32,12 @@ jobs:
           git add *
           git commit -m "automatic github_to_obsidian synchronization"
           git push
+
+  keepalive-job: # This job's sole goal is to prevent the workflow from disabling after 60 days of inactivity
+    name: Keep workflow alive
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/keepalive-workflow@v2
