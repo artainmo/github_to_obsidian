@@ -34,10 +34,10 @@ jobs:
           git push
 
   keepalive-job: # This job's sole goal is to prevent the workflow from disabling after 60 days of inactivity
-    name: Keep workflow alive
+    name: Keepalive Workflow
     runs-on: ubuntu-latest
     permissions:
       actions: write
     steps:
       - uses: actions/checkout@v4
-      - uses: gautamkrishnar/keepalive-workflow@v2
+      - uses: gautamkrishnar/keepalive-workflow@2.0.10
