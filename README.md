@@ -1,6 +1,8 @@
 # github_to_obsidian
 Personal project. Program to transfer and synchronize all my public github repositories into my obsidian. 
 
+This is useful because specific information can be found way faster via obsidian.
+
 If a new file has been created or an existing file updated, the program will synchronize this in Obsidian repo, but it won't delete files in Obsidian that have been deleted in github. This is why repositories should only be made public once the code inside is finished to avoid syncronization problems with files deleted on github.
 
 ## Steps to create
