@@ -91,4 +91,6 @@ webserv/webserv/frontend
 ft_printf/ft_printf
 ```
 
-
+## Next things I could do
+1. Delete files in Obsidian that have been deleted in github. Maybe do that by removing and regenerating all the files each time. 
+2. Generate the files in a folder named 'github' instead of in the root. This is useful to segregate generated github files from files you have written, lowering the risk of injecting faulty generated files at the root in the middle of normal files, but also this is useful to allow plugins to exclude the github files (for example obsidian copilot can benefit from not indexing all the github files).
